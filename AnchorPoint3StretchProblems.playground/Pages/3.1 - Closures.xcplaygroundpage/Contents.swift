@@ -17,5 +17,26 @@ var numbersArray = [11,24,45,44,59,43,88,93,58,11,13,14,15,190]
 var stringsArray = ["I", "Love", "DevMountain"]
 var blackDiamondDictionary = ["Mama" : "too cold", "Papa" : "too hot", "Baby" : "just right"]
 
+let multThreeArray = numbersArray.filter { $0 % 3 == 0 }
 
+print(numbersArray)
+
+print(multThreeArray)
+
+let maxNum = multThreeArray.reduce(Int.min) { max($0, $1) }
+
+print(maxNum)
+
+let oneString = stringsArray.reduce("", { $0 + " " + $1 } )
+
+print(oneString)
+
+let threeBearsPorridgeMapped = blackDiamondDictionary.compactMap { (bear, temp) in "\(bear) porridge is too \(temp)!"
+}
+
+print(threeBearsPorridgeMapped)
+
+let threeBearsPorridgeSentences = threeBearsPorridgeMapped.reduce("", { (paragraph, sentence) in " \(paragraph)\n\(sentence)"} )
+
+print(threeBearsPorridgeSentences)
 //: [Next](@next)
